@@ -42,10 +42,11 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
+          DATE=$(date '+%Y-%m-%d')
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add PixelagePIFOverlay/res/values/config.xml
-          git commit -m "Update config.xml from JSON file"
+          git commit -m "Update Fingerprint from PIF JSON file on $DATE"
           git push
         env:
           TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
